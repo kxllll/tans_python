@@ -11,8 +11,8 @@ from docx.shared import Inches
 import time
 
 def tans(q):
-	appid = '20200102000372083'  # 填写你的appid
-	secretKey = '5AszTCQ0tCOfoswWULGZ'  # 填写你的密钥
+	appid = ''  # 填写你的appid
+	secretKey = ''  # 填写你的密钥
 
 	httpClient = None
 	myurl = '/api/trans/vip/translate'
@@ -45,12 +45,12 @@ def tans(q):
 			httpClient.close()
 
 
-document = Document('T:\\云备份\\OneDrive - 香港中国妇女会中学\\Desktop\\trans_test\\38.Wireless Network Design for ransmission Line Monitoring in Smart Grid.docx')  #打开文件demo.docx
+document = Document('')  #打开文件demo.docx
 for x in document.paragraphs: 
 	if tans(x.text) == None:
 		continue
 	else:
 		x.text=x.text.replace(x.text,tans(x.text))
-	time.sleep(0.2)
+	time.sleep(0.1)
 
-document.save(r"T:\\云备份\\OneDrive - 香港中国妇女会中学\\Desktop\\trans_test\\38.Wireless Network Design for ransmission Line Monitoring in Smart Grid.docx")
+document.save(r"")	#文件位置
